@@ -8,12 +8,13 @@ def is_prime(n):
     """
     result = True
     for i in range(n - 1, 2, -1):
-        if (n % i == 0):
+        if n % i == 0:
             # If n is divisible by a smaller integer, then n is not prime.
             result = False
             break
 
     return result
+
 
 # Initial value (which is never meant to be the final answer!)
 largest_prime = 1
@@ -26,8 +27,9 @@ current_number = 2
 
 while (600851475143 // current_number >= current_number):
     # We first check if current_number can divide 600851475143.
-    # If 600851475143 is divisible, then we check if current_number is a prime, with the help of is_prime(n).
-    if (600851475143 % current_number == 0 and is_prime(current_number)):
+    # If 600851475143 is divisible
+    # then we check if current_number is a prime, with the help of is_prime(n).
+    if 600851475143 % current_number == 0 and is_prime(current_number):
         largest_prime = current_number
     current_number += 1
 

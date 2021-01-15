@@ -19,6 +19,7 @@ def gcd(a, b):
     else:
         return gcd(dividend % divisor, divisor)
 
+
 lcm_list = range(1, 21)
 
 while len(lcm_list) != 1:

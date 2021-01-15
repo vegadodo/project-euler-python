@@ -17,6 +17,7 @@ def is_palindrome(n):
 
     return (number_original == number_reversed)
 
+
 def is_prod_of_two_3_digit_num(n):
     """
     Find if n is the product of 3-digit numbers.
@@ -25,17 +26,18 @@ def is_prod_of_two_3_digit_num(n):
     result = False
 
     for i in range(100, 1000):
-        if ((n % i == 0) and (n // i in range(100, 1000))):
+        if n % i == 0 and n // i in range(100, 1000):
             result = True
             break
 
     return result
 
+
 # Initial value (which is never meant to be the final answer!)
 largest_palindrome = 1
 
 for i in range(999999, 10000, -1):
-    if (is_palindrome(i) and is_prod_of_two_3_digit_num(i)):
+    if is_palindrome(i) and is_prod_of_two_3_digit_num(i):
         largest_palindrome = i
         break
 
