@@ -5,25 +5,19 @@ Even Fibonacci numbers
 https://projecteuler.net/problem=2
 """
 
-# Basic example of using a recursion.
+fibonacci_whole = [1, 2]
+fibonacci_even = [2]
 
+while fibonacci_whole[-1] < 4000000:
+    # Using the definition, first find the next fibonacci number
+    # by adding last two fibonacci numbers.
+    next_fibonacci = sum(fibonacci_whole[-2:])
 
-def fibonacci(n):
-    """Return the nth fibonacci number."""
-    if n == 1:
-        return 1
-    if n == 2:
-        return 2
-    # Follow the definition.
-    return fibonacci(n - 1) + fibonacci(n - 2)
+    fibonacci_whole.append(next_fibonacci)
 
+    # If new fibonacci number is even, we also append this to
+    # the list of even fibonacci numbers.
+    if next_fibonacci % 2 == 0:
+        fibonacci_even.append(next_fibonacci)
 
-answer = 0
-n = 1
-
-while fibonacci(n) < 4000000:
-    if fibonacci(n) % 2 == 0:
-        answer += fibonacci(n)
-    n += 1
-
-print(answer)
+print(sum(fibonacci_even))
