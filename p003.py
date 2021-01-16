@@ -1,11 +1,13 @@
-# Largest prime factor
-# Problem 3
-# https://projecteuler.net/problem=3
+"""
+Problem 3.
+
+Largest prime factor
+https://projecteuler.net/problem=3
+"""
+
 
 def is_prime(n):
-    """
-    Find if the given number n is prime.
-    """
+    """Determine whether the given integer n is prime."""
     result = True
     for i in range(n - 1, 2, -1):
         if n % i == 0:
@@ -25,7 +27,7 @@ current_number = 2
 # However, we will not use sqrt() function!
 # We can just compare the quotient with the divisor.
 
-while (600851475143 // current_number >= current_number):
+while 600851475143 // current_number >= current_number:
     # We first check if current_number can divide 600851475143.
     # If 600851475143 is divisible
     # then we check if current_number is a prime, with the help of is_prime(n).

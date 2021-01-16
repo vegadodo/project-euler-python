@@ -1,12 +1,13 @@
-# Largest palindrome product
-# Problem 4
-# https://projecteuler.net/problem=4
+"""
+Problem 4.
+
+Largest palindrome product
+https://projecteuler.net/problem=4
+"""
+
 
 def is_palindrome(n):
-    """
-    Find if n is palindrome.
-    """
-
+    """Determine whether n is palindrome."""
     # Convert the given number into list.
     number_original = list(map(int, str(n)))
 
@@ -15,14 +16,11 @@ def is_palindrome(n):
     # Then, reverse the list.
     number_reversed.reverse()
 
-    return (number_original == number_reversed)
+    return number_original == number_reversed
 
 
 def is_prod_of_two_3_digit_num(n):
-    """
-    Find if n is the product of 3-digit numbers.
-    """
-
+    """Determine whether n is the product of 3-digit numbers."""
     result = False
 
     for i in range(100, 1000):
